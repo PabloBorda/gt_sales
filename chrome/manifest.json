@@ -6,8 +6,7 @@
   "description": "Saves Sales Navigator Leads",
   "permissions": [
   "activeTab",
-  "scripting",
-  "fileSystem"
+  "scripting"
   ],
   "background": {
   "service_worker": "background.js"

@@ -4,13 +4,6 @@
 function saveLeadsToCSV() {
 
 
-  // Create and open or just open a chrome extension local database
-
-  let db = window.openDatabase('leads_database', '1.0', 'Sales Navigator Lead Database', 2 * 1024 * 1024);
-
-
-
-
   document.addEventListener("DOMContentLoaded", function(){
 
     alert("dom");
@@ -53,6 +46,16 @@ function saveLeadsToCSV() {
         
         line = photo + ',' + lead_panel + ',' + person_name + ',' + span + ',' + job_title + ',' + location + ',' + title + '\n';
     
+        var xhr = new XMLHttpRequest();
+        xhr.open("GET", "http://localhost:8080/?line=" +line, true);
+        xhr.onreadystatechange = function() {
+          if (xhr.readyState === XMLHttpRequest.DONE) {
+            console.log(xhr.responseText);
+          }
+        };
+        xhr.send(stringValue);
+
+
         // Write the modified text
         fileWriter.write(line);
         alert("Hola locao : " + line);
