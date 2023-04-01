@@ -1,0 +1,17 @@
+{
+  "name": "Golden Thinker Sales Navigator",
+  "action": {},
+  "manifest_version": 3,
+  "version": "0.1",
+  "description": "Saves Sales Navigator Leads",
+  "permissions": [
+  "activeTab",
+  "scripting"
+  ],
+   "browser_action": {
+    "default_popup": "popup.html"
+  },
+  "background": {
+  "service_worker": "background.js"
+  }
+  }
